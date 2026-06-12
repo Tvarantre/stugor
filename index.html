@@ -1,237 +1,774 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <title>Tvärånsstugor</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-    <style>
+<head>
+  <title>Tväråns Stugor – Fiske & Stugor i Norrbotten</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Boka en av våra tre mysiga 4-bäddsstugor vid Tvärån i Norrbotten. Perfekt för fiskesemester nära Ängesån och Kalix älv. Från 600 kr/natt.">
+  <meta name="keywords" content="stugor norrbotten, fiskesemester, överkalix, tvärån, laxfiske, harr, airbnb stugor, hyra stuga norrbotten">
+  <meta name="author" content="Tväråns Stugor">
+  <meta property="og:title" content="Tväråns Stugor – Fiske & Stugor i Norrbotten">
+  <meta property="og:description" content="Tre mysiga 4-bäddsstugor vid Tvärån, Överkalix. Vedeldad bastu, grillkåta och fantastiskt fiske. Från 600 kr/natt.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/forest.jpg">
+  <link rel="canonical" href="https://tvarantre.github.io/stugor/">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Tväråns Stugor",
+    "description": "Tre mysiga 4-bäddsstugor vid Tvärån i Norrbotten, nära Ängesån och Kalix älv. Perfekt för fiskesemester.",
+    "url": "https://tvarantre.github.io/stugor/",
+    "image": "img/forest.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tvärån 3",
+      "addressLocality": "Överkalix",
+      "addressCountry": "SE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "66.5",
+      "longitude": "22.8"
+    },
+    "openingHours": "June–September",
+    "priceRange": "600–1000 SEK/natt",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Kök", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Dusch", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Parkering", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Bastu", "value": true}
+    ],
+    "containsPlace": [
+      {
+        "@type": "LodgingBusiness",
+        "name": "Stuga Röd",
+        "numberOfRooms": 1,
+        "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "4 bäddar", "value": true}],
+        "url": "https://www.airbnb.com/rooms/51491057"
+      },
+      {
+        "@type": "LodgingBusiness",
+        "name": "Stuga Grön",
+        "numberOfRooms": 1,
+        "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "4 bäddar", "value": true}],
+        "url": "https://www.airbnb.com/rooms/51550621"
+      },
+      {
+        "@type": "LodgingBusiness",
+        "name": "Stuga Blå",
+        "numberOfRooms": 1,
+        "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "4 bäddar", "value": true}],
+        "url": "https://www.airbnb.com/rooms/672255387765446006"
+      }
+    ]
+  }
+  </script>
+
+  <style>
     body, html {
       height: 100%;
       font-family: "Inconsolata", sans-serif;
     }
-
     .bgimg {
       background-position: center;
       background-size: cover;
       background-image: url(img/forest.jpg);
-      min-height: 75%;
+      min-height: 75vh;
     }
+    .menu { display: none; }
 
-    .menu {
-      display: none;
-    }
-    .w3-dark-green {
-      background-color: hsl(150, 80%, 10%);
-    }
-
-    .custom-green {
-      background-color: #0b3d2e; /* dark park green */
-      color: #fff;
-      border: none;
-    }
-
-    .custom-green:hover {
-      background-color: #06281f; /* darker on hover */
-    }  
-
-    .custom-green {
-      transition: background-color 0.2s ease;
-    }
-      
+    .w3-dark-green { background-color: hsl(150, 80%, 10%); }
     .w3-dark-green-opacity {
-      background-color: hsla(150, 80%, 10%, 0.5);
+      background-color: hsla(150, 80%, 10%, 0.55);
       padding: 16px;
     }
+    p { color: hsla(150, 40%, 10%, 1); }
 
-    p {
-      color: hsla(150, 40%, 10%, 1)
+    .custom-green {
+      background-color: #0b3d2e;
+      color: #fff;
+      border: none;
+      transition: background-color 0.2s ease;
     }
-    </style>
-  </head>
+    .custom-green:hover { background-color: #06281f; }
+
+    /* Sticky nav */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background-color: hsl(150, 80%, 10%);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .site-nav a.nav-link {
+      color: #fff;
+      padding: 12px 14px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .site-nav a.nav-link:hover { background-color: #06281f; }
+    .lang-switcher {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding-right: 8px;
+      gap: 2px;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 0.78rem;
+      border-radius: 3px;
+      font-family: "Inconsolata", sans-serif;
+    }
+    .lang-btn:hover, .lang-btn.active { background-color: #06281f; border-color: #fff; }
+
+    /* Book-now bar */
+    .book-bar {
+      position: fixed;
+      top: 45px;
+      left: 0; right: 0;
+      z-index: 999;
+      background-color: #0b3d2e;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .book-bar span {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.8rem;
+      margin-right: 4px;
+    }
+    .book-bar-btn {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      transition: opacity 0.2s;
+    }
+    .book-bar-btn:hover { opacity: 0.85; }
+    .btn-red   { background-color: #b03030; }
+    .btn-green { background-color: #2a6a3a; }
+    .btn-blue  { background-color: #1a4a7a; }
+
+    /* Push content below nav + bar */
+    body { padding-top: 90px; }
+
+    /* Cabin cards */
+    .cabin-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      padding: 40px 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .cabin-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      overflow: hidden;
+      flex: 1 1 280px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cabin-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .cabin-card-body {
+      padding: 18px 18px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .cabin-card h3 {
+      margin: 0 0 4px;
+      font-size: 1.25rem;
+      color: #0b3d2e;
+    }
+    .cabin-badge {
+      display: inline-block;
+      background: #e8f5ee;
+      color: #0b3d2e;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+    .amenity-list {
+      list-style: none;
+      padding: 0; margin: 0 0 14px;
+      font-size: 0.88rem;
+      color: #333;
+      flex: 1;
+    }
+    .amenity-list li { padding: 3px 0; }
+    .amenity-list li::before { content: "✓ "; color: #0b3d2e; font-weight: bold; }
+    .cabin-price {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #0b3d2e;
+      margin-bottom: 14px;
+    }
+    .card-book-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #0b3d2e;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    .card-book-btn:hover { background-color: #06281f; }
+
+    /* Section heading tag */
+    .section-tag {
+      display: inline-block;
+      background-color: hsl(150, 80%, 10%);
+      color: #fff;
+      padding: 4px 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    /* Hero CTA buttons */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 22px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      transition: opacity 0.2s;
+    }
+    .hero-btn:hover { opacity: 0.85; }
+
+    @media (max-width: 600px) {
+      .book-bar { top: 80px; }
+      body { padding-top: 130px; }
+      .site-nav { flex-wrap: wrap; }
+    }
+  </style>
+</head>
 <body>
 
-<!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-padding w3-dark-green" style="display:flex;">
+<!-- ===== STICKY NAV ===== -->
+<div class="site-nav">
+  <a href="#hem"       class="nav-link" data-i18n="nav_home">Hem</a>
+  <a href="#om"        class="nav-link" data-i18n="nav_about">Om</a>
+  <a href="#cards"     class="nav-link" data-i18n="nav_cabins">Stugor</a>
+  <a href="#boka"      class="nav-link" data-i18n="nav_book">Boka Stuga</a>
+  <a href="#hitta_hit" class="nav-link" data-i18n="nav_directions">Hitta hit</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('sv')">SV</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fi')">FI</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('no')">NO</button>
+  </div>
+</div>
 
-    <a href="#" class="w3-button w3-text-white w3-dark-green" style="flex:1">Hem</a>
-    <a href="#om" class="w3-button w3-text-white w3-dark-green" style="flex:1">Om</a>
-    <a href="#stugor" class="w3-button w3-text-white w3-dark-green" style="flex:1">Stugor</a>
-    <a href="#boka" class="w3-button w3-text-white w3-dark-green" style="flex:1">Boka Stuga</a>
-    <a href="#hitta_hit" class="w3-button w3-text-white w3-dark-green" style="flex:1">Hitta hit</a>
+<!-- ===== STICKY BOOK-NOW BAR ===== -->
+<div class="book-bar">
+  <span data-i18n="book_bar_title">Boka direkt:</span>
+  <a href="https://www.airbnb.com/rooms/51491057" target="_blank" rel="noopener" class="book-bar-btn btn-red" data-i18n="book_red">Stuga Röd</a>
+  <a href="https://www.airbnb.com/rooms/51550621" target="_blank" rel="noopener" class="book-bar-btn btn-green" data-i18n="book_green">Stuga Grön</a>
+  <a href="https://www.airbnb.com/rooms/672255387765446006" target="_blank" rel="noopener" class="book-bar-btn btn-blue" data-i18n="book_blue">Stuga Blå</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="bgimg w3-display-container" id="hem">
+  <div class="w3-display-bottomleft w3-center w3-padding-16">
+    <span class="w3-tag w3-dark-green" data-i18n="hero_open">Öppet: 1 Jun – 31 Sep</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <h1 class="w3-text-white w3-dark-green-opacity" data-i18n="hero_title">Välkommen till Tväråns Stugor</h1>
+    <p class="w3-text-white w3-padding-16 w3-xlarge w3-dark-green-opacity" data-i18n="hero_sub">Fiske och Stugor i Norrbotten</p>
+    <div class="hero-cta w3-dark-green-opacity" style="padding:12px;">
+      <a href="https://www.airbnb.com/rooms/51491057" target="_blank" rel="noopener" class="hero-btn btn-red" data-i18n="book_red">Stuga Röd</a>
+      <a href="https://www.airbnb.com/rooms/51550621" target="_blank" rel="noopener" class="hero-btn btn-green" data-i18n="book_green">Stuga Grön</a>
+      <a href="https://www.airbnb.com/rooms/672255387765446006" target="_blank" rel="noopener" class="hero-btn btn-blue" data-i18n="book_blue">Stuga Blå</a>
+    </div>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-16">
+    <a href="https://goo.gl/maps/ZafSEGpwLmbyS3BM8" class="w3-text-white w3-dark-green" style="text-decoration:none;" target="_blank" rel="noopener">Tvärån 3, Överkalix</a>
+  </div>
+</header>
+
+<div class="w3-light-grey w3-large">
+
+<!-- ===== CABIN CARDS ===== -->
+<div id="cards" style="background:#f0f7f3;">
+  <div style="text-align:center; padding:48px 0 8px;">
+    <h2 class="section-tag" data-i18n="cabins_heading">Våra Stugor</h2>
+  </div>
+
+  <div class="cabin-cards">
+
+    <!-- Red Cabin -->
+    <div class="cabin-card">
+      <img src="img/rod_stuga.jpg" alt="Stuga Röd">
+      <div class="cabin-card-body">
+        <h3 data-i18n="cabin_red_name">Stuga Röd</h3>
+        <span class="cabin-badge">24 m² · <span data-i18n="beds">4 bäddar</span></span>
+        <ul class="amenity-list">
+          <li data-i18n="amenity_kitchen">Fullt utrustat kök</li>
+          <li data-i18n="amenity_shower">WC &amp; dusch med varmvatten</li>
+          <li data-i18n="amenity_freezer">Frysmöjligheter</li>
+          <li data-i18n="amenity_parking">Gratis parkering</li>
+          <li data-i18n="amenity_sauna">Vedeldad bastu (nära)</li>
+          <li data-i18n="amenity_grill">Grillkåta Top Arctic</li>
+        </ul>
+        <div class="cabin-price" data-i18n="price">Från 600 kr/natt</div>
+        <a href="https://www.airbnb.com/rooms/51491057" target="_blank" rel="noopener" class="card-book-btn" data-i18n="book_airbnb">Boka på Airbnb</a>
+      </div>
+    </div>
+
+    <!-- Green Cabin -->
+    <div class="cabin-card">
+      <img src="img/Stuga_bla_gron.jpg" alt="Stuga Grön">
+      <div class="cabin-card-body">
+        <h3 data-i18n="cabin_green_name">Stuga Grön</h3>
+        <span class="cabin-badge">28 m² · <span data-i18n="beds">4 bäddar</span></span>
+        <ul class="amenity-list">
+          <li data-i18n="amenity_kitchen">Fullt utrustat kök</li>
+          <li data-i18n="amenity_shower">WC &amp; dusch med varmvatten</li>
+          <li data-i18n="amenity_logwalls">Timrade väggar &amp; furupanel</li>
+          <li data-i18n="amenity_parking">Gratis parkering</li>
+          <li data-i18n="amenity_sauna">Vedeldad bastu (nära)</li>
+          <li data-i18n="amenity_grill">Grillkåta Top Arctic</li>
+        </ul>
+        <div class="cabin-price" data-i18n="price">Från 600 kr/natt</div>
+        <a href="https://www.airbnb.com/rooms/51550621" target="_blank" rel="noopener" class="card-book-btn" data-i18n="book_airbnb">Boka på Airbnb</a>
+      </div>
+    </div>
+
+    <!-- Blue Cabin -->
+    <div class="cabin-card">
+      <img src="img/Stuga_bla_gron.jpg" alt="Stuga Blå">
+      <div class="cabin-card-body">
+        <h3 data-i18n="cabin_blue_name">Stuga Blå</h3>
+        <span class="cabin-badge">28 m² · <span data-i18n="beds">4 bäddar</span></span>
+        <ul class="amenity-list">
+          <li data-i18n="amenity_kitchen">Fullt utrustat kök</li>
+          <li data-i18n="amenity_shower">WC &amp; dusch med varmvatten</li>
+          <li data-i18n="amenity_logwalls">Timrade väggar &amp; furupanel</li>
+          <li data-i18n="amenity_parking">Gratis parkering</li>
+          <li data-i18n="amenity_sauna">Vedeldad bastu (nära)</li>
+          <li data-i18n="amenity_grill">Grillkåta Top Arctic</li>
+        </ul>
+        <div class="cabin-price" data-i18n="price">Från 600 kr/natt</div>
+        <a href="https://www.airbnb.com/rooms/672255387765446006" target="_blank" rel="noopener" class="card-book-btn" data-i18n="book_airbnb">Boka på Airbnb</a>
+      </div>
+    </div>
 
   </div>
 </div>
 
-<!-- Header with image -->
-<header class="bgimg w3-display-container" id="hem">
-  <div class="w3-display-bottomleft w3-center w3-padding-16">
-    <span class="w3-tag w3-dark-green">Öppet: 1 Jun - 31 Sep</span>
-  </div>
-  <div class="w3-display-middle w3-center">
-    <h1 class="w3-text-white w3-dark-green-opacity">Välkommen till Tväråns Stugor</h1>
-  <p class="w3-text-white w3-padding-16 w3-xlarge w3-dark-green-opacity">Fiske och Stugor i Norrbotten</p></div>
-  <div class="w3-display-bottomright w3-center w3-padding-16">
-    <span class="w3-text-white w3-dark-green"><a href="https://goo.gl/maps/ZafSEGpwLmbyS3BM8">Tvärån 3, Överkalix</a></span>
-  </div>
-</header>
-
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-light-grey w3-large">
-
-<!-- About Container -->
+<!-- ===== ABOUT ===== -->
 <div class="w3-container" id="om">
   <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide w3-dark-green">OM TVÄRÅNSSTUGOR</span></h5>
-    <p>Du kan knappast hitta ett bättre och mysigare boende om du planerar att semestra i Norrbotten. Är det en fiskesemester du vill ha så har du funnit det rätta stället! Tre mysiga fyra-bäddsstugor, fullt utrustade med kök, toalett och dusch. I anslutning till stugorna finns även en mycket fin vedeldad bastu samt den mysiga grillkåtan-TOP ARCTIC.</p>    
+    <h5 class="w3-center w3-padding-64"><span class="section-tag" data-i18n="about_heading">OM TVÄRÅNSSTUGOR</span></h5>
+    <p data-i18n="about_p1">Du kan knappast hitta ett bättre och mysigare boende om du planerar att semestra i Norrbotten. Är det en fiskesemester du vill ha så har du funnit det rätta stället! Tre mysiga fyra-bäddsstugor, fullt utrustade med kök, toalett och dusch. I anslutning till stugorna finns även en mycket fin vedeldad bastu samt den mysiga grillkåtan-TOP ARCTIC.</p>
     <div class="w3-panel w3-leftbar w3-light-grey">
-      <p>Stugorna ligger endast ca 100m från en i trakten välkänd harrfors,Tväråforsen. Förutom harr kan du om du har tur kanske kroka en nyuppstigen Öring. Om det är lax du är ute efter så är du endast minuter ifrån bland de bästa laxforsarna i Sverige - Ängesån och Kalix älv. Tvärån är en liten idyllisk by vid E10:an, ca 18 km norr om Överkalix centralort. Avståndet till polcirkeln är endast ca 15 km.</p>
+      <p data-i18n="about_p2">Stugorna ligger endast ca 100m från en i trakten välkänd harrfors, Tväråforsen. Förutom harr kan du om du har tur kanske kroka en nyuppstigen Öring. Om det är lax du är ute efter så är du endast minuter ifrån bland de bästa laxforsarna i Sverige - Ängesån och Kalix älv. Tvärån är en liten idyllisk by vid E10:an, ca 18 km norr om Överkalix centralort. Avståndet till polcirkeln är endast ca 15 km.</p>
     </div>
     <img src="img/fisk.jpg" alt="bild på en öring" style="width:100%;max-width:1000px" class="w3-margin-top">
   </div>
 </div>
 
-<!-- Cabin Container -->
+<!-- ===== DETAILED STUGOR (tabs) ===== -->
 <div class="w3-container" id="stugor">
   <div class="w3-content" style="max-width:700px">
- 
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-dark-green w3-text-white">Våra Stugor</span></h5>
-  
+    <h5 class="w3-center w3-padding-48"><span class="section-tag" data-i18n="cabins_heading">Våra Stugor</span></h5>
+
     <div class="w3-row w3-center w3-card w3-padding">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Stugor');" id="myLink">
-        <div class="w3-col s6 tablink">Stugor</div>
+        <div class="w3-col s6 tablink" data-i18n="tab_cabins">Stugor</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Fiskekort');">
-        <div class="w3-col s6 tablink ">Fiskekort</div>
+        <div class="w3-col s6 tablink" data-i18n="tab_fishing">Fiskekort</div>
       </a>
     </div>
 
     <div id="Stugor" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Stuga Röd</h5>
+      <h5 data-i18n="cabin_red_name">Stuga Röd</h5>
       <img src="img/rod_stuga.jpg" alt="En röd stuga" style="width:100%;max-width:1000px;margin-top:32px;">
       <img src="img/rod_stuga_planritning.png" alt="Röd stugas planritning" style="width:100%;max-width:1000px;margin-top:32px;">
- 
-      <p class="w3-text-grey">Mycket mysig och 4-bäddsstuga på 24 m², utrustad med alla bekvämligheter. Stugan rekommenderas varmt till alla men är perfekt för de som avser att fiska lax, harr och öring mm. i älvarna Ängesån och Tvärån. För fiskare och bärplockare finns det även frysmöjligheter i anslutning till stugan.
-<br> <br><strong>pris från 600 kronor/natt</strong></p><br>
-  
-      <h5>Stuga Blå och Grön</h5>
-        <img src="img/Stuga_bla_gron.jpg" alt="Röda stugor i länga." style="width:100%;max-width:1000px;margin-top:32px;">   
-        <img src="img/stuga_bla.png" alt="Planritning av stuga blå" style="width:100%;max-width:200px;margin-top:32px;">
-        <img src="img/stuga_gron.png" alt="Planritning av stuga gtön" style="width:100%;max-width:200px;margin-top:32px;">
- 
-      <p class="w3-text-grey">Något större stugor än stuga 1, båda stugorna är på ca 28 m² med 4 bäddar i varje stuga. Robust inredning och interiör med timrade väggar och furupanel i tak. Fullt utrustade kök för självhushåll och kylskåp. Wc och dusch med varmvatten.<br>
-    <br><strong>pris från 600 kronor/natt</strong></p><br> 
+      <p class="w3-text-grey" data-i18n="cabin_red_desc">Mycket mysig och 4-bäddsstuga på 24 m², utrustad med alla bekvämligheter. Stugan rekommenderas varmt till alla men är perfekt för de som avser att fiska lax, harr och öring mm. i älvarna Ängesån och Tvärån. För fiskare och bärplockare finns det även frysmöjligheter i anslutning till stugan.<br><br><strong data-i18n="price">Från 600 kr/natt</strong></p>
+      <a href="https://www.airbnb.com/rooms/51491057" target="_blank" rel="noopener" class="w3-button w3-margin-top custom-green" data-i18n="book_airbnb">Boka på Airbnb</a><br><br>
 
-      <h5>Vedeldad Bastu</h5>
-       <img src="img/vedeldad_bastu.jpg" alt="En vedeldad bastu röd." style="width:100%;max-width:1000px;margin-top:32px;">
- 
-      <p class="w3-text-grey">Vedeldad bastu i nära anslutning till stugorna. Går att boka på plats. Upp till 4 personer.</p><br>
-    
-      <h5>Grillkåta Top Arctic</h5>
-       <img src="img/grillkata.jpg" alt="En grillkåta" style="width:100%;max-width:1000px;margin-top:32px;">
- 
-      <p class="w3-text-grey">Top Arctic är mycket mysig med en eldstad i mitten. Helt perfekt för grillpartyn och annan samvaro. Upp till 20 personer kan samlas här för till exempel konferenser, möten och sammanträden, "after fishing" bara för att nämna några få aktiviteter. </p><br>
-    
+      <h5 data-i18n="cabin_blue_green_heading">Stuga Blå och Grön</h5>
+      <img src="img/Stuga_bla_gron.jpg" alt="Röda stugor i länga." style="width:100%;max-width:1000px;margin-top:32px;">
+      <img src="img/stuga_bla.png" alt="Planritning av stuga blå" style="width:100%;max-width:200px;margin-top:32px;">
+      <img src="img/stuga_gron.png" alt="Planritning av stuga grön" style="width:100%;max-width:200px;margin-top:32px;">
+      <p class="w3-text-grey" data-i18n="cabin_blue_green_desc">Något större stugor än stuga 1, båda stugorna är på ca 28 m² med 4 bäddar i varje stuga. Robust inredning och interiör med timrade väggar och furupanel i tak. Fullt utrustade kök för självhushåll och kylskåp. Wc och dusch med varmvatten.<br><br><strong data-i18n="price">Från 600 kr/natt</strong></p>
+      <a href="https://www.airbnb.com/rooms/51550621" target="_blank" rel="noopener" class="w3-button w3-margin-top custom-green" data-i18n="book_airbnb_green">Boka Grön på Airbnb</a>
+      <a href="https://www.airbnb.com/rooms/672255387765446006" target="_blank" rel="noopener" class="w3-button w3-margin-top custom-green" style="margin-left:8px;" data-i18n="book_airbnb_blue">Boka Blå på Airbnb</a><br><br>
+
+      <h5 data-i18n="sauna_heading">Vedeldad Bastu</h5>
+      <img src="img/vedeldad_bastu.jpg" alt="En vedeldad bastu röd." style="width:100%;max-width:1000px;margin-top:32px;">
+      <p class="w3-text-grey" data-i18n="sauna_desc">Vedeldad bastu i nära anslutning till stugorna. Går att boka på plats. Upp till 4 personer.</p><br>
+
+      <h5 data-i18n="grillhut_heading">Grillkåta Top Arctic</h5>
+      <img src="img/grillkata.jpg" alt="En grillkåta" style="width:100%;max-width:1000px;margin-top:32px;">
+      <p class="w3-text-grey" data-i18n="grillhut_desc">Top Arctic är mycket mysig med en eldstad i mitten. Helt perfekt för grillpartyn och annan samvaro. Upp till 20 personer kan samlas här för till exempel konferenser, möten och sammanträden, "after fishing" bara för att nämna några få aktiviteter.</p><br>
     </div>
 
     <div id="Fiskekort" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Fiskekort</h5>
-        <img src="img/mete.jpg" alt="Ett mete" style="width:100%;max-width:1000px;margin-top:32px;">   
- 
-      <p class="w3-text-grey">Vi säljer även fiskekort för er som vill ha en fiskesemester! Besök gärna <a href="http://www.angesan.se/">http://www.angesan.se/</a> för regler. <br>
-        <br>Laxfiske är tillåtet från och med 1 Juni till 31 Juli. <br><br>
-        Köp <a href="https://kalix.laxportalen.se">Fiskekort här.</a></p>
-    </div>  
+      <h5 data-i18n="fishing_heading">Fiskekort</h5>
+      <img src="img/mete.jpg" alt="Ett mete" style="width:100%;max-width:1000px;margin-top:32px;">
+      <p class="w3-text-grey">
+        <span data-i18n="fishing_desc">Vi säljer även fiskekort för er som vill ha en fiskesemester! Besök gärna</span>
+        <a href="http://www.angesan.se/">www.angesan.se</a>
+        <span data-i18n="fishing_rules">för regler.</span><br><br>
+        <span data-i18n="fishing_salmon">Laxfiske är tillåtet från och med 1 Juni till 31 Juli.</span><br><br>
+        <a href="https://kalix.laxportalen.se" data-i18n="fishing_buy">Köp Fiskekort här.</a>
+      </p>
+    </div>
     <img src="img/free-fishing.jpg" alt="tjej som står fri vid sjön" style="width:100%;max-width:1000px;margin-top:32px;">
   </div>
 </div>
 
-<!-- Contact/Area Container -->
+<!-- ===== DIRECTIONS & BOOKING ===== -->
 <div class="w3-container" id="hitta_hit" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Hitta hit</span></h5>
-    <p>Ni hittar oss i Överkalix vid E10.</p>
+    <h5 class="w3-center w3-padding-48"><span class="section-tag" data-i18n="directions_heading">Hitta hit</span></h5>
+    <p data-i18n="directions_p1">Ni hittar oss i Överkalix vid E10.</p>
     <img src="img/forest-big.jpg" alt="Grön skog uppifrån fotat med en flod" class="w3-image" style="width:100%">
-    <p>18 km norr om Överkalix centralort invid väg E10 ligger byn Tvärån. Innan ni kommer till Tvärån passerar ni byn Gyljen. Tvärån ligger ca 8 km ytterligare norrut. Stugorna ligger på höger hand om ni kommer från söder.</p>
-    <p><strong>Boka</strong> stuga i tid, då efterfrågan under fiskesäsong är hög. Ni bokar enkelt via AirBnB, se lista nedan. Vid frågor kontakta Juha via mejl <a href="mailto:juha.t.heinonen@hotmail.com">Clicka för att mejl Juha</a> för bokning eller andra frågor. </p>
+    <p data-i18n="directions_p2">18 km norr om Överkalix centralort invid väg E10 ligger byn Tvärån. Innan ni kommer till Tvärån passerar ni byn Gyljen. Tvärån ligger ca 8 km ytterligare norrut. Stugorna ligger på höger hand om ni kommer från söder.</p>
+    <p>
+      <span data-i18n="book_p">Boka stuga i tid, då efterfrågan under fiskesäsong är hög. Ni bokar enkelt via Airbnb, se lista nedan. Vid frågor kontakta Juha via mejl</span>
+      <a href="mailto:juha.t.heinonen@hotmail.com" data-i18n="contact_link">Klicka för att mejla Juha</a>.
+    </p>
 
-    <h5 class="w3-center w3-padding-32">
-      <span class="w3-tag w3-wide" id="boka">Boka våra stugor via AirBnB</span>
+    <h5 class="w3-center w3-padding-32" id="boka">
+      <span class="section-tag" data-i18n="book_heading">Boka våra stugor via Airbnb</span>
     </h5>
 
-<div class="w3-panel w3-border w3-center" 
-     style="padding:16px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border-radius: 0;">
-
-  <p>
-    <strong>Stuga Röd nummer 1</strong><br>
-    <a href="https://airbnb.com/h/tvaran-stugor-1" target="_blank"
-       class="w3-button w3-margin-top custom-green">
-       Boka på AirBnB
-    </a>
-  </p>
-
-  <hr>
-
-  <p>
-    <strong>Stuga Grön nummer 2</strong><br>
-    <a href="https://airbnb.com/h/tvaran-stugor-2" target="_blank"
-       class="w3-button w3-margin-top custom-green">
-       Boka på AirBnB
-    </a>
-  </p>
-
-  <hr>
-
-  <p>
-    <strong>Stuga Blå nummer 3</strong><br>
-    <a href="https://airbnb.com/h/tvaran-stugor-3" target="_blank"
-       class="w3-button w3-margin-top custom-green">
-       Boka på AirBnB
-    </a>
-  </p>
-
-</div>
-
-    
-    <!-- <form action="mailto:tvaransstugortre@gmail.com" method="POST" enctype="multipart/form-data">
-      <p>Namn:<br><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Namn" required name="Name"></p>
-      <p>Mejl:<br><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Din mejladress" required name="email"></p>
-      <p>Meddelande:<br><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Skriv ditt meddelande här / Ditt önskade datum för bokning" required name="Message"></p>
-      <p><button class="w3-button w3-black" type="submit">Skicka meddelande</button></p>
-    </form> -->
+    <div class="w3-panel w3-border w3-center" style="padding:24px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border-radius:4px;">
+      <p>
+        <strong data-i18n="cabin_red_nr">Stuga Röd nummer 1</strong><br>
+        <a href="https://www.airbnb.com/rooms/51491057" target="_blank" rel="noopener" class="w3-button w3-margin-top custom-green" data-i18n="book_airbnb">Boka på Airbnb</a>
+      </p>
+      <hr>
+      <p>
+        <strong data-i18n="cabin_green_nr">Stuga Grön nummer 2</strong><br>
+        <a href="https://www.airbnb.com/rooms/51550621" target="_blank" rel="noopener" class="w3-button w3-margin-top custom-green" data-i18n="book_airbnb">Boka på Airbnb</a>
+      </p>
+      <hr>
+      <p>
+        <strong data-i18n="cabin_blue_nr">Stuga Blå nummer 3</strong><br>
+        <a href="https://www.airbnb.com/rooms/672255387765446006" target="_blank" rel="noopener" class="w3-button w3-margin-top custom-green" data-i18n="book_airbnb">Boka på Airbnb</a>
+      </p>
+    </div>
   </div>
-</div
-  
-  
-
-<!-- End page content -->
 </div>
 
-<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+</div><!-- end w3-light-grey -->
+
+<!-- ===== FOOTER ===== -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <p>Den här Webbplatsen är gjord av Raisa S - 2026 via github och w3spaces</p>
-  <a class="w3-button w3-round-xxlarge w3-dark-grey w3-margin-bottom" href="https://www.facebook.com/tvaransstugor3/" target="_blank">Besök vårt Facebook-konto</a>
- <!-- Footer end. -->
- </footer>
+  <p data-i18n="footer_text">Den här Webbplatsen är gjord av Raisa S – 2026 via GitHub och W3Spaces</p>
+  <a class="w3-button w3-round-xxlarge w3-dark-grey w3-margin-bottom" href="https://www.facebook.com/tvaransstugor3/" target="_blank" rel="noopener" data-i18n="fb_button">Besök vårt Facebook-konto</a>
+</footer>
 
 <script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+// ===== TRANSLATIONS =====
+const translations = {
+  sv: {
+    nav_home:"Hem", nav_about:"Om", nav_cabins:"Stugor", nav_book:"Boka Stuga", nav_directions:"Hitta hit",
+    book_bar_title:"Boka direkt:", book_red:"Stuga Röd", book_green:"Stuga Grön", book_blue:"Stuga Blå",
+    hero_title:"Välkommen till Tväråns Stugor", hero_sub:"Fiske och Stugor i Norrbotten",
+    hero_open:"Öppet: 1 Jun – 31 Sep", hero_cta:"Boka nu",
+    cabins_heading:"Våra Stugor",
+    cabin_red_name:"Stuga Röd", cabin_green_name:"Stuga Grön", cabin_blue_name:"Stuga Blå",
+    beds:"4 bäddar", amenity_kitchen:"Fullt utrustat kök", amenity_shower:"WC & dusch med varmvatten",
+    amenity_freezer:"Frysmöjligheter", amenity_parking:"Gratis parkering",
+    amenity_sauna:"Vedeldad bastu (nära)", amenity_grill:"Grillkåta Top Arctic",
+    amenity_logwalls:"Timrade väggar & furupanel",
+    price:"Från 600 kr/natt", book_airbnb:"Boka på Airbnb",
+    book_airbnb_green:"Boka Grön på Airbnb", book_airbnb_blue:"Boka Blå på Airbnb",
+    about_heading:"OM TVÄRÅNSSTUGOR",
+    about_p1:"Du kan knappast hitta ett bättre och mysigare boende om du planerar att semestra i Norrbotten. Är det en fiskesemester du vill ha så har du funnit det rätta stället! Tre mysiga fyra-bäddsstugor, fullt utrustade med kök, toalett och dusch. I anslutning till stugorna finns även en mycket fin vedeldad bastu samt den mysiga grillkåtan-TOP ARCTIC.",
+    about_p2:"Stugorna ligger endast ca 100m från en i trakten välkänd harrfors, Tväråforsen. Förutom harr kan du om du har tur kanske kroka en nyuppstigen Öring. Om det är lax du är ute efter så är du endast minuter ifrån bland de bästa laxforsarna i Sverige - Ängesån och Kalix älv. Tvärån är en liten idyllisk by vid E10:an, ca 18 km norr om Överkalix centralort. Avståndet till polcirkeln är endast ca 15 km.",
+    tab_cabins:"Stugor", tab_fishing:"Fiskekort",
+    cabin_red_desc:"Mycket mysig och 4-bäddsstuga på 24 m², utrustad med alla bekvämligheter. Perfekt för de som avser att fiska lax, harr och öring i älvarna Ängesån och Tvärån. Frysmöjligheter för fiskare och bärplockare.",
+    cabin_blue_green_heading:"Stuga Blå och Grön",
+    cabin_blue_green_desc:"Något större stugor, båda på ca 28 m² med 4 bäddar. Robust inredning med timrade väggar och furupanel. Fullt utrustade kök. WC och dusch med varmvatten.",
+    sauna_heading:"Vedeldad Bastu", sauna_desc:"Vedeldad bastu nära stugorna. Bokas på plats. Upp till 4 personer.",
+    grillhut_heading:"Grillkåta Top Arctic",
+    grillhut_desc:'Top Arctic är mycket mysig med en eldstad i mitten. Perfekt för grillpartyn och samvaro. Upp till 20 personer kan samlas här för konferenser, möten och "after fishing".',
+    fishing_heading:"Fiskekort",
+    fishing_desc:"Vi säljer även fiskekort för er som vill ha en fiskesemester! Besök gärna",
+    fishing_rules:"för regler.",
+    fishing_salmon:"Laxfiske är tillåtet från och med 1 Juni till 31 Juli.",
+    fishing_buy:"Köp Fiskekort här.",
+    directions_heading:"Hitta hit",
+    directions_p1:"Ni hittar oss i Överkalix vid E10.",
+    directions_p2:"18 km norr om Överkalix centralort invid väg E10 ligger byn Tvärån. Innan ni kommer till Tvärån passerar ni byn Gyljen. Tvärån ligger ca 8 km ytterligare norrut. Stugorna ligger på höger hand om ni kommer från söder.",
+    book_p:"Boka stuga i tid, då efterfrågan under fiskesäsong är hög. Vid frågor kontakta Juha via mejl ",
+    contact_link:"Klicka för att mejla Juha",
+    cabin_red_nr:"Stuga Röd nummer 1", cabin_green_nr:"Stuga Grön nummer 2", cabin_blue_nr:"Stuga Blå nummer 3",
+    book_heading:"Boka våra stugor via Airbnb",
+    footer_text:"Den här Webbplatsen är gjord av Raisa S – 2026 via GitHub och W3Spaces",
+    fb_button:"Besök vårt Facebook-konto"
+  },
+  en: {
+    nav_home:"Home", nav_about:"About", nav_cabins:"Cabins", nav_book:"Book a Cabin", nav_directions:"Directions",
+    book_bar_title:"Book directly:", book_red:"Red Cabin", book_green:"Green Cabin", book_blue:"Blue Cabin",
+    hero_title:"Welcome to Tväråns Cabins", hero_sub:"Fishing & Cabins in Norrbotten",
+    hero_open:"Open: June 1 – Sep 30", hero_cta:"Book now",
+    cabins_heading:"Our Cabins",
+    cabin_red_name:"Red Cabin", cabin_green_name:"Green Cabin", cabin_blue_name:"Blue Cabin",
+    beds:"4 beds", amenity_kitchen:"Fully equipped kitchen", amenity_shower:"Toilet & hot shower",
+    amenity_freezer:"Freezer access", amenity_parking:"Free parking",
+    amenity_sauna:"Wood-fired sauna (nearby)", amenity_grill:"Grill hut Top Arctic",
+    amenity_logwalls:"Log walls & pine ceilings",
+    price:"From 600 SEK/night", book_airbnb:"Book on Airbnb",
+    book_airbnb_green:"Book Green on Airbnb", book_airbnb_blue:"Book Blue on Airbnb",
+    about_heading:"ABOUT TVÄRÅNSSTUGOR",
+    about_p1:"You'll struggle to find better, cosier accommodation for a holiday in Norrbotten. Looking for a fishing holiday? You've found the right place! Three cosy four-bed cabins, fully equipped with kitchen, toilet and shower. Next to the cabins: a beautiful wood-fired sauna and the charming grill hut TOP ARCTIC.",
+    about_p2:"The cabins are only ~100m from the famous grayling rapids at Tväråforsen. You might also hook a sea trout. If it's salmon you're after, you're minutes from some of Sweden's best salmon rapids – Ängesån and Kalix älv. Tvärån is a small idyllic village on the E10 road, ~18 km north of Överkalix. The Arctic Circle is just 15 km away.",
+    tab_cabins:"Cabins", tab_fishing:"Fishing permits",
+    cabin_red_desc:"A very cosy 4-bed cabin of 24 m², fully equipped. Perfect for fishing salmon, grayling and trout in the Ängesån and Tvärån rivers. Freezer facilities available for fishers and berry pickers.",
+    cabin_blue_green_heading:"Blue & Green Cabin",
+    cabin_blue_green_desc:"Slightly larger at ~28 m² each, with 4 beds. Sturdy log-wall interior with pine ceilings. Fully equipped kitchen and fridge. Toilet and hot shower.",
+    sauna_heading:"Wood-fired Sauna", sauna_desc:"Wood-fired sauna close to the cabins. Book on site. Up to 4 persons.",
+    grillhut_heading:"Grill Hut Top Arctic",
+    grillhut_desc:'Top Arctic is cosy with a central fireplace. Perfect for BBQs and get-togethers. Up to 20 people for meetings, parties or "after fishing" events.',
+    fishing_heading:"Fishing Permits",
+    fishing_desc:"We also sell fishing permits! Visit",
+    fishing_rules:"for regulations.",
+    fishing_salmon:"Salmon fishing is permitted June 1 – July 31.",
+    fishing_buy:"Buy a fishing permit here.",
+    directions_heading:"Directions",
+    directions_p1:"Find us in Överkalix by the E10 road.",
+    directions_p2:"18 km north of Överkalix town center on the E10 lies the village of Tvärån. You pass the village of Gyljen on the way. The cabins are on the right side coming from the south.",
+    book_p:"Book early – demand during fishing season is high. For questions contact Juha by email ",
+    contact_link:"Click to email Juha",
+    cabin_red_nr:"Red Cabin no. 1", cabin_green_nr:"Green Cabin no. 2", cabin_blue_nr:"Blue Cabin no. 3",
+    book_heading:"Book our cabins via Airbnb",
+    footer_text:"This website was made by Raisa S – 2026 via GitHub and W3Spaces",
+    fb_button:"Visit our Facebook page"
+  },
+  fi: {
+    nav_home:"Etusivu", nav_about:"Tietoja", nav_cabins:"Mökit", nav_book:"Varaa mökki", nav_directions:"Opastus",
+    book_bar_title:"Varaa suoraan:", book_red:"Punainen mökki", book_green:"Vihreä mökki", book_blue:"Sininen mökki",
+    hero_title:"Tervetuloa Tväråns Stugoriin", hero_sub:"Kalastus ja mökit Norrbottenissa",
+    hero_open:"Avoinna: 1.6. – 30.9.", hero_cta:"Varaa nyt",
+    cabins_heading:"Mökkimme",
+    cabin_red_name:"Punainen mökki", cabin_green_name:"Vihreä mökki", cabin_blue_name:"Sininen mökki",
+    beds:"4 vuodepaikkaa", amenity_kitchen:"Täysin varustettu keittiö", amenity_shower:"WC & lämminvesisuihku",
+    amenity_freezer:"Pakastinmahdollisuus", amenity_parking:"Ilmainen pysäköinti",
+    amenity_sauna:"Puulämmitteinen sauna (lähellä)", amenity_grill:"Grillikota Top Arctic",
+    amenity_logwalls:"Hirsiseinät & mäntypaneeli",
+    price:"Alkaen 600 SEK/yö", book_airbnb:"Varaa Airbnb:stä",
+    book_airbnb_green:"Varaa Vihreä Airbnb:stä", book_airbnb_blue:"Varaa Sininen Airbnb:stä",
+    about_heading:"TIETOJA TVÄRÅNSSTUGORISTA",
+    about_p1:"Tuskin löydät parempaa ja viihtyisämpää majoitusta Norrbottenin lomalle. Haluatko kalastusloman? Olet löytänyt oikean paikan! Kolme viihtyisää neljän hengen mökkiä keittiöllä, wc:llä ja suihkulla. Vieressä hieno puulämmitteinen sauna sekä grillikota TOP ARCTIC.",
+    about_p2:"Mökit sijaitsevat vain ~100 m kuuluisasta harjuskoskesta Tväråforsenista. Voit saada myös meritaimenen koukuun. Lohijokiin – Ängesåniin ja Kalix älveen – on vain minuutteja. Tvärån on pieni kylä E10-tien varrella, ~18 km Överkalixin keskustasta. Napapiiri on vain 15 km päässä.",
+    tab_cabins:"Mökit", tab_fishing:"Kalastusluvat",
+    cabin_red_desc:"Viihtyisä 4 hengen mökki, 24 m², kaikilla mukavuuksilla. Täydellinen lohta, harjusta ja taimenta Ängesånissa ja Tvärånissa kalastaville. Pakastintilaa kalastajille ja marjastajille.",
+    cabin_blue_green_heading:"Sininen ja Vihreä mökki",
+    cabin_blue_green_desc:"Hieman suurempia, noin 28 m², 4 vuodepaikkaa kummassakin. Hirsiseinät ja mäntypaneeli. Täysin varusteltu keittiö. WC ja lämminvesisuihku.",
+    sauna_heading:"Puulämmitteinen sauna", sauna_desc:"Puulämmitteinen sauna mökkien lähellä. Varattavissa paikan päältä. Enintään 4 hlö.",
+    grillhut_heading:"Grillikota Top Arctic",
+    grillhut_desc:'Top Arctic on viihtyisä, keskellä tulisija. Täydellinen grillibileisiin. Jopa 20 henkilöä kokouksiin tai "after fishing" -tilaisuuksiin.',
+    fishing_heading:"Kalastusluvat",
+    fishing_desc:"Myymme myös kalastuslupia! Vieraile",
+    fishing_rules:"säännöissä.",
+    fishing_salmon:"Lohikalastus sallittu 1.6.–31.7.",
+    fishing_buy:"Osta kalastuslupa tästä.",
+    directions_heading:"Opastus",
+    directions_p1:"Löydät meidät Överkalixista E10-tien varrelta.",
+    directions_p2:"18 km Överkalixin keskustasta pohjoiseen E10:llä sijaitsee Tvärånin kylä. Matkan varrella kuljet Gyljenin läpi. Mökit ovat oikealla puolella etelästä tultaessa.",
+    book_p:"Varaa ajoissa – kysyntä kalastussesongin aikana on suurta. Kyselyissä ota yhteyttä Juhaan sähköpostitse ",
+    contact_link:"Lähetä sähköposti Juhalle",
+    cabin_red_nr:"Punainen mökki nro 1", cabin_green_nr:"Vihreä mökki nro 2", cabin_blue_nr:"Sininen mökki nro 3",
+    book_heading:"Varaa mökki Airbnb:n kautta",
+    footer_text:"Tämän verkkosivuston on tehnyt Raisa S – 2026 GitHubin ja W3Spacesin kautta",
+    fb_button:"Vieraile Facebook-sivullamme"
+  },
+  de: {
+    nav_home:"Startseite", nav_about:"Über uns", nav_cabins:"Hütten", nav_book:"Hütte buchen", nav_directions:"Anfahrt",
+    book_bar_title:"Direkt buchen:", book_red:"Rote Hütte", book_green:"Grüne Hütte", book_blue:"Blaue Hütte",
+    hero_title:"Willkommen bei Tväråns Stugor", hero_sub:"Angeln und Hütten in Norrbotten",
+    hero_open:"Geöffnet: 1. Juni – 30. Sept.", hero_cta:"Jetzt buchen",
+    cabins_heading:"Unsere Hütten",
+    cabin_red_name:"Rote Hütte", cabin_green_name:"Grüne Hütte", cabin_blue_name:"Blaue Hütte",
+    beds:"4 Betten", amenity_kitchen:"Voll ausgestattete Küche", amenity_shower:"WC & Warmwasserdusche",
+    amenity_freezer:"Gefriermöglichkeit", amenity_parking:"Kostenloser Parkplatz",
+    amenity_sauna:"Holzsauna (in der Nähe)", amenity_grill:"Grillhütte Top Arctic",
+    amenity_logwalls:"Blockholzwände & Kieferndecke",
+    price:"Ab 600 SEK/Nacht", book_airbnb:"Bei Airbnb buchen",
+    book_airbnb_green:"Grüne Hütte bei Airbnb", book_airbnb_blue:"Blaue Hütte bei Airbnb",
+    about_heading:"ÜBER TVÄRÅNSSTUGOR",
+    about_p1:"Sie finden kaum eine gemütlichere Unterkunft für einen Urlaub in Norrbotten. Angelurlaub? Hier sind Sie richtig! Drei gemütliche Vier-Bett-Hütten mit Küche, Toilette und Dusche. Daneben eine wunderschöne Holzsauna und die Grillhütte TOP ARCTIC.",
+    about_p2:"Die Hütten liegen nur ~100 m von den bekannten Äschenschnellen Tväråforsen. Mit etwas Glück haken Sie auch eine Meerforelle. Die besten Lachsschnellen Schwedens – Ängesån und Kalix älv – sind nur Minuten entfernt. Tvärån liegt an der E10, ~18 km nördlich von Överkalix. Der Polarkreis ist nur 15 km weg.",
+    tab_cabins:"Hütten", tab_fishing:"Angelscheine",
+    cabin_red_desc:"Gemütliche 4-Bett-Hütte, 24 m², mit allen Annehmlichkeiten. Perfekt zum Lachsangeln in Ängesån und Tvärån. Gefriermöglichkeiten für Angler und Beerensammler.",
+    cabin_blue_green_heading:"Blaue & Grüne Hütte",
+    cabin_blue_green_desc:"Etwas größer, je ca. 28 m², 4 Betten. Robuste Blockholzeinrichtung mit Kieferndecke. Voll ausgestattete Küche. WC und Warmwasserdusche.",
+    sauna_heading:"Holzsauna", sauna_desc:"Holzsauna neben den Hütten. Vor Ort buchbar. Bis zu 4 Personen.",
+    grillhut_heading:"Grillhütte Top Arctic",
+    grillhut_desc:'Top Arctic ist sehr gemütlich mit zentraler Feuerstelle. Ideal für Grillpartys. Bis zu 20 Personen für Treffen oder „After Fishing"-Events.',
+    fishing_heading:"Angelscheine",
+    fishing_desc:"Wir verkaufen auch Angelscheine! Besuchen Sie",
+    fishing_rules:"für die Vorschriften.",
+    fishing_salmon:"Lachsfischen erlaubt vom 1. Juni bis 31. Juli.",
+    fishing_buy:"Hier Angelschein kaufen.",
+    directions_heading:"Anfahrt",
+    directions_p1:"Sie finden uns in Överkalix an der E10.",
+    directions_p2:"18 km nördlich von Överkalix liegt das Dorf Tvärån an der E10. Auf dem Weg passieren Sie Gyljen. Die Hütten sind auf der rechten Seite aus Richtung Süden.",
+    book_p:"Frühzeitig buchen – die Nachfrage in der Angelsaison ist hoch. Fragen? Kontaktieren Sie Juha per E-Mail ",
+    contact_link:"E-Mail an Juha senden",
+    cabin_red_nr:"Rote Hütte Nr. 1", cabin_green_nr:"Grüne Hütte Nr. 2", cabin_blue_nr:"Blaue Hütte Nr. 3",
+    book_heading:"Unsere Hütten über Airbnb buchen",
+    footer_text:"Diese Website wurde von Raisa S – 2026 über GitHub und W3Spaces erstellt",
+    fb_button:"Unsere Facebook-Seite besuchen"
+  },
+  fr: {
+    nav_home:"Accueil", nav_about:"À propos", nav_cabins:"Chalets", nav_book:"Réserver", nav_directions:"Itinéraire",
+    book_bar_title:"Réservez directement :", book_red:"Chalet Rouge", book_green:"Chalet Vert", book_blue:"Chalet Bleu",
+    hero_title:"Bienvenue à Tväråns Stugor", hero_sub:"Pêche et chalets en Norrbotten",
+    hero_open:"Ouvert : 1 juin – 30 sept.", hero_cta:"Réserver",
+    cabins_heading:"Nos chalets",
+    cabin_red_name:"Chalet Rouge", cabin_green_name:"Chalet Vert", cabin_blue_name:"Chalet Bleu",
+    beds:"4 lits", amenity_kitchen:"Cuisine entièrement équipée", amenity_shower:"WC & douche eau chaude",
+    amenity_freezer:"Accès congélateur", amenity_parking:"Parking gratuit",
+    amenity_sauna:"Sauna à bois (à proximité)", amenity_grill:"Hutte barbecue Top Arctic",
+    amenity_logwalls:"Murs en rondins & plafond en pin",
+    price:"À partir de 600 SEK/nuit", book_airbnb:"Réserver sur Airbnb",
+    book_airbnb_green:"Réserver Vert sur Airbnb", book_airbnb_blue:"Réserver Bleu sur Airbnb",
+    about_heading:"À PROPOS DE TVÄRÅNSSTUGOR",
+    about_p1:"Vous ne trouverez guère meilleur hébergement pour vos vacances en Norrbotten. Envie de pêche ? Vous êtes au bon endroit ! Trois chalets confortables de 4 couchages avec cuisine, toilettes et douche. À côté : un superbe sauna à bois et la hutte barbecue TOP ARCTIC.",
+    about_p2:"Les chalets sont à seulement ~100 m des rapides à ombres de Tväråforsen. Vous pourriez aussi attraper une truite de mer. Les meilleurs rapides à saumons de Suède – Ängesån et Kalix älv – sont à quelques minutes. Tvärån est un village idyllique sur la route E10, à ~18 km au nord d'Överkalix. Le Cercle Arctique est à seulement 15 km.",
+    tab_cabins:"Chalets", tab_fishing:"Permis de pêche",
+    cabin_red_desc:"Chalet 4 couchages de 24 m², tout équipé. Parfait pour la pêche au saumon, à l'ombre et à la truite dans les rivières Ängesån et Tvärån. Congélateur disponible.",
+    cabin_blue_green_heading:"Chalet Bleu & Vert",
+    cabin_blue_green_desc:"Légèrement plus grands, ~28 m² chacun, 4 couchages. Murs en rondins et plafond en pin. Cuisine équipée. WC et douche eau chaude.",
+    sauna_heading:"Sauna à bois", sauna_desc:"Sauna à bois près des chalets. Réservable sur place. Jusqu'à 4 personnes.",
+    grillhut_heading:"Hutte barbecue Top Arctic",
+    grillhut_desc:'Top Arctic est très cosy avec foyer central. Parfait pour barbecues et rassemblements. Jusqu\'à 20 personnes pour réunions ou soirées "after fishing".',
+    fishing_heading:"Permis de pêche",
+    fishing_desc:"Nous vendons aussi des permis de pêche ! Visitez",
+    fishing_rules:"pour les règlements.",
+    fishing_salmon:"La pêche au saumon est autorisée du 1er juin au 31 juillet.",
+    fishing_buy:"Acheter un permis de pêche ici.",
+    directions_heading:"Itinéraire",
+    directions_p1:"Vous nous trouverez à Överkalix sur la route E10.",
+    directions_p2:"À 18 km au nord d'Överkalix sur la E10 se trouve Tvärån. Vous passerez par Gyljen. Les chalets sont sur votre droite en venant du sud.",
+    book_p:"Réservez tôt – la demande en saison de pêche est élevée. Des questions ? Contactez Juha par e-mail ",
+    contact_link:"Envoyer un e-mail à Juha",
+    cabin_red_nr:"Chalet Rouge n° 1", cabin_green_nr:"Chalet Vert n° 2", cabin_blue_nr:"Chalet Bleu n° 3",
+    book_heading:"Réservez nos chalets via Airbnb",
+    footer_text:"Ce site a été créé par Raisa S – 2026 via GitHub et W3Spaces",
+    fb_button:"Visitez notre page Facebook"
+  },
+  no: {
+    nav_home:"Hjem", nav_about:"Om oss", nav_cabins:"Hytter", nav_book:"Bestill hytte", nav_directions:"Veibeskrivelse",
+    book_bar_title:"Bestill direkte:", book_red:"Rød hytte", book_green:"Grønn hytte", book_blue:"Blå hytte",
+    hero_title:"Velkommen til Tväråns Stugor", hero_sub:"Fiske og hytter i Norrbotten",
+    hero_open:"Åpent: 1. juni – 30. sept.", hero_cta:"Bestill nå",
+    cabins_heading:"Våre hytter",
+    cabin_red_name:"Rød hytte", cabin_green_name:"Grønn hytte", cabin_blue_name:"Blå hytte",
+    beds:"4 senger", amenity_kitchen:"Fullt utstyrt kjøkken", amenity_shower:"WC & varmtvannsdusj",
+    amenity_freezer:"Frysetilgang", amenity_parking:"Gratis parkering",
+    amenity_sauna:"Vedfyrt badstu (nærliggende)", amenity_grill:"Grillhytte Top Arctic",
+    amenity_logwalls:"Tømmervegger & furuplank",
+    price:"Fra 600 SEK/natt", book_airbnb:"Bestill på Airbnb",
+    book_airbnb_green:"Bestill Grønn på Airbnb", book_airbnb_blue:"Bestill Blå på Airbnb",
+    about_heading:"OM TVÄRÅNSSTUGOR",
+    about_p1:"Du finner knapt bedre og koseligerer overnatting for ferie i Norrbotten. Vil du ha en fiskeferie? Her er rett sted! Tre koselige fire-sengs hytter med kjøkken, toalett og dusj. Like ved: en fin vedfyrt badstu og den koselige grillhytten TOP ARCTIC.",
+    about_p2:"Hyttene ligger kun ~100 m fra de kjente harrsstrykene Tväråforsen. Du kan også få en sjøørret på kroken. Noen av Sveriges beste laksestrykker – Ängesån og Kalix älv – er bare minutter unna. Tvärån er en liten idyllisk landsby ved E10, ~18 km nord for Överkalix. Polarsirkelen er bare 15 km unna.",
+    tab_cabins:"Hytter", tab_fishing:"Fiskekort",
+    cabin_red_desc:"Koselig 4-sengers hytte, 24 m², fullt utstyrt. Perfekt for laks-, harr- og ørretfiske i Ängesån og Tvärån. Frysetilgang for fiskere og bærplukkere.",
+    cabin_blue_green_heading:"Blå og Grønn hytte",
+    cabin_blue_green_desc:"Litt større, ca. 28 m² med 4 senger. Tømmervegger og furuplank. Fullt utstyrt kjøkken. WC og varmtvannsdusj.",
+    sauna_heading:"Vedfyrt badstu", sauna_desc:"Vedfyrt badstu nær hyttene. Bestilles på stedet. Opptil 4 personer.",
+    grillhut_heading:"Grillhytte Top Arctic",
+    grillhut_desc:'Top Arctic er koselig med ildsted i midten. Perfekt for grillkvelder. Opptil 20 personer for møter eller "after fishing"-arrangementer.',
+    fishing_heading:"Fiskekort",
+    fishing_desc:"Vi selger også fiskekort! Besøk",
+    fishing_rules:"for regler.",
+    fishing_salmon:"Laksefiske tillatt 1. juni – 31. juli.",
+    fishing_buy:"Kjøp fiskekort her.",
+    directions_heading:"Veibeskrivelse",
+    directions_p1:"Du finner oss i Överkalix ved E10.",
+    directions_p2:"18 km nord for Överkalix sentrum på E10 ligger Tvärån. Du passerer Gyljen på veien. Hyttene er på høyre side når du kommer fra sør.",
+    book_p:"Bestill tidlig – etterspørselen i fiskesesongen er høy. Spørsmål? Kontakt Juha på e-post ",
+    contact_link:"Send e-post til Juha",
+    cabin_red_nr:"Rød hytte nr. 1", cabin_green_nr:"Grønn hytte nr. 2", cabin_blue_nr:"Blå hytte nr. 3",
+    book_heading:"Bestill våre hytter via Airbnb",
+    footer_text:"Dette nettstedet ble laget av Raisa S – 2026 via GitHub og W3Spaces",
+    fb_button:"Besøk vår Facebook-side"
   }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-light-green", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-light-green";
+};
+
+let currentLang = 'sv';
+
+function setLang(lang) {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key] !== undefined) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
 }
-document.getElementById("myLink").click();
+
+// ===== TAB MENU =====
+function openMenu(evt, menuName) {
+  document.querySelectorAll('.menu').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.tablink').forEach(el => el.classList.remove('w3-light-green'));
+  document.getElementById(menuName).style.display = 'block';
+  evt.currentTarget.firstElementChild.classList.add('w3-light-green');
+}
+
+document.getElementById('myLink').click();
 </script>
 
 </body>
